@@ -1,7 +1,5 @@
 # Menstrual Cycle Forecasting
 
-Prepared by: Nursena Taşkıran
-
 This repository contains the code, report, and experiment outputs for the HaloScape menstrual cycle forecasting case study.
 
 ## Project Overview
@@ -10,8 +8,8 @@ The goal of this project is to build a sequence-based forecasting pipeline for m
 
 The final model is a multi-output LSTM with a shared sequence encoder and two task-specific heads:
 
-* **Regression output:** predicts days until the next cycle
-* **Classification output:** predicts the menstrual phase for each day in the sequence
+- **Regression output:** predicts days until the next cycle
+- **Classification output:** predicts the menstrual phase for each day in the sequence
 
 The final selected configuration is:
 
@@ -28,14 +26,10 @@ seq21_tanh_glorot_adam_bs32_dropout02
 │       └── menstrual_cycle_dataset.csv
 ├── reports/
 │   ├── rapor.pdf
-│   └── final_model/
-│       ├── seq21_tanh_glorot_adam_bs32_dropout02_metrics.json
-│       ├── seq21_tanh_glorot_adam_bs32_dropout02_history.json
-│       ├── seq21_tanh_glorot_adam_bs32_dropout02_phase_accuracy.png
-│       ├── seq21_tanh_glorot_adam_bs32_dropout02_regression_mae.png
-│       ├── seq21_tanh_glorot_adam_bs32_dropout02_total_loss.png
-│       ├── seq21_tanh_glorot_adam_bs32_dropout02_confusion_matrix_val.png
-│       └── seq21_tanh_glorot_adam_bs32_dropout02_confusion_matrix_test.png
+│   ├── final_model/
+│   │   ├── metrics, training history, and evaluation plots for the selected final model
+│   └── experiments/
+│       └── saved training histories and evaluation metrics for optimization experiments
 ├── src/
 │   ├── baseline_lstm.py
 │   ├── daily_dataset_builder.py
@@ -66,10 +60,10 @@ The original dataset is cycle-level. Each cycle is expanded into daily records u
 
 The daily dataset includes:
 
-* `day_in_cycle`
-* `days_until_next_cycle`
-* rule-based `phase_label`
-* historical cycle features based only on previous cycles
+- `day_in_cycle`
+- `days_until_next_cycle`
+- rule-based `phase_label`
+- historical cycle features based only on previous cycles
 
 To reduce leakage risk, current-cycle `Cycle Length` and `Period Length` are not used directly as model inputs.
 
@@ -77,11 +71,11 @@ To reduce leakage risk, current-cycle `Cycle Length` and `Period Length` are not
 
 The preprocessing pipeline applies:
 
-* user-level train/validation/test split
-* categorical encoding
-* train-fitted MinMax scaling
-* historical feature construction
-* leakage-safe feature selection
+- user-level train/validation/test split
+- categorical encoding
+- train-fitted MinMax scaling
+- historical feature construction
+- leakage-safe feature selection
 
 The split is performed at the user level to avoid having records from the same user in both training and evaluation sets.
 
@@ -101,8 +95,8 @@ y_reg:   (n_sequences, sequence_length, 1)
 
 The model is a shared-encoder multi-task LSTM. A single LSTM layer learns temporal representations, followed by two task-specific output heads:
 
-* softmax classification head for phase prediction
-* linear regression head for days-until-next-cycle prediction
+- softmax classification head for phase prediction
+- linear regression head for days-until-next-cycle prediction
 
 The final configuration uses:
 
@@ -157,12 +151,12 @@ The report compares multiple experimental configurations, including different se
 
 To reproduce or extend these experiments, the configuration values in `main_train_baseline.py` can be changed, for example:
 
-* `seq_length`
-* `dense_activation`
-* `kernel_initializer`
-* `optimizer_name`
-* `batch_size`
-* `dropout_rate`
+- `seq_length`
+- `dense_activation`
+- `kernel_initializer`
+- `optimizer_name`
+- `batch_size`
+- `dropout_rate`
 
 After changing the configuration, run:
 
@@ -182,13 +176,13 @@ reports/final_model/
 
 This folder includes:
 
-* training history
-* final validation/test metrics
-* phase accuracy curve
-* regression MAE curve
-* total loss curve
-* validation confusion matrix
-* test confusion matrix
+- training history
+- final validation/test metrics
+- phase accuracy curve
+- regression MAE curve
+- total loss curve
+- validation confusion matrix
+- test confusion matrix
 
 ## Notes
 

@@ -1,0 +1,162 @@
+{
+  "validation": {
+    "classification_accuracy": 0.7636281041792853,
+    "macro_f1": 0.5593626004961345,
+    "weighted_f1": 0.7456451779273616,
+    "regression_mae_days": 5.532456398010254,
+    "regression_rmse_days": 6.700587221289446,
+    "classification_report": {
+      "menstruation": {
+        "precision": 0.7888888888888889,
+        "recall": 0.725499303297724,
+        "f1-score": 0.7558674086619889,
+        "support": 2153.0
+      },
+      "follicular": {
+        "precision": 0.8022347411995393,
+        "recall": 0.8675238127292921,
+        "f1-score": 0.8336028460543338,
+        "support": 29711.0
+      },
+      "ovulation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1902.0
+      },
+      "luteal": {
+        "precision": 0.6571499298621999,
+        "recall": 0.6390627507623174,
+        "f1-score": 0.6479801472682153,
+        "support": 12462.0
+      },
+      "accuracy": 0.7636281041792853,
+      "macro avg": {
+        "precision": 0.5620683899876571,
+        "recall": 0.5580214666973333,
+        "f1-score": 0.5593626004961345,
+        "support": 46228.0
+      },
+      "weighted avg": {
+        "precision": 0.7294946049904825,
+        "recall": 0.7636281041792853,
+        "f1-score": 0.7456451779273616,
+        "support": 46228.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        1562,
+        591,
+        0,
+        0
+      ],
+      [
+        418,
+        25775,
+        0,
+        3518
+      ],
+      [
+        0,
+        1265,
+        0,
+        637
+      ],
+      [
+        0,
+        4498,
+        0,
+        7964
+      ]
+    ]
+  },
+  "test": {
+    "classification_accuracy": 0.755271151612615,
+    "macro_f1": 0.5523927442408302,
+    "weighted_f1": 0.7379594695954285,
+    "regression_mae_days": 5.718808650970459,
+    "regression_rmse_days": 6.94539625977685,
+    "classification_report": {
+      "menstruation": {
+        "precision": 0.8088077336197637,
+        "recall": 0.6786840919333033,
+        "f1-score": 0.7380543984317569,
+        "support": 2219.0
+      },
+      "follicular": {
+        "precision": 0.7965144740706896,
+        "recall": 0.8561706307444047,
+        "f1-score": 0.8252658630192571,
+        "support": 28506.0
+      },
+      "ovulation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1858.0
+      },
+      "luteal": {
+        "precision": 0.6441437769989404,
+        "recall": 0.6483714824842071,
+        "f1-score": 0.6462507155123068,
+        "support": 12189.0
+      },
+      "accuracy": 0.755271151612615,
+      "macro avg": {
+        "precision": 0.5623664961723485,
+        "recall": 0.5458065512904788,
+        "f1-score": 0.5523927442408302,
+        "support": 44772.0
+      },
+      "weighted avg": {
+        "precision": 0.7225867608460962,
+        "recall": 0.755271151612615,
+        "f1-score": 0.7379594695954285,
+        "support": 44772.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        1506,
+        713,
+        0,
+        0
+      ],
+      [
+        356,
+        24406,
+        0,
+        3744
+      ],
+      [
+        0,
+        1236,
+        0,
+        622
+      ],
+      [
+        0,
+        4286,
+        0,
+        7903
+      ]
+    ]
+  },
+  "baseline_config": {
+    "seq_length": 14,
+    "lstm_units": 64,
+    "dense_units": 32,
+    "dropout": null,
+    "dense_activation": "tanh",
+    "kernel_initializer": "glorot_uniform",
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "epochs": 30,
+    "loss_weights": {
+      "phase_output": 1.0,
+      "regression_output": 0.1
+    }
+  }
+}

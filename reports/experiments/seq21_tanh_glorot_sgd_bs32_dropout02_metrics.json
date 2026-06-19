@@ -1,0 +1,184 @@
+{
+  "validation": {
+    "classification_accuracy": 0.7029449423815621,
+    "macro_f1": 0.25578600740815555,
+    "weighted_f1": 0.6080907619451775,
+    "regression_mae_days": 9.172882080078125,
+    "regression_rmse_days": 11.678339831321074,
+    "classification_report": {
+      "menstruation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 2153.0
+      },
+      "follicular": {
+        "precision": 0.7002973617057173,
+        "recall": 0.9896581527732244,
+        "f1-score": 0.8202050142027911,
+        "support": 33553.0
+      },
+      "ovulation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1673.0
+      },
+      "luteal": {
+        "precision": 0.7732362821948489,
+        "recall": 0.11679634641407308,
+        "f1-score": 0.202939015429831,
+        "support": 11824.0
+      },
+      "accuracy": 0.7029449423815621,
+      "macro avg": {
+        "precision": 0.36838341097514155,
+        "recall": 0.2766136247968244,
+        "f1-score": 0.25578600740815555,
+        "support": 49203.0
+      },
+      "weighted avg": {
+        "precision": 0.6633705907766564,
+        "recall": 0.7029449423815621,
+        "f1-score": 0.6080907619451775,
+        "support": 49203.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        2153,
+        0,
+        0
+      ],
+      [
+        0,
+        33206,
+        0,
+        347
+      ],
+      [
+        0,
+        1615,
+        0,
+        58
+      ],
+      [
+        0,
+        10443,
+        0,
+        1381
+      ]
+    ]
+  },
+  "test": {
+    "classification_accuracy": 0.6904340497260851,
+    "macro_f1": 0.24346711437284474,
+    "weighted_f1": 0.5891276890879954,
+    "regression_mae_days": 9.237915992736816,
+    "regression_rmse_days": 11.771081072245446,
+    "classification_report": {
+      "menstruation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 2212.0
+      },
+      "follicular": {
+        "precision": 0.6904373190535275,
+        "recall": 0.9873307392996109,
+        "f1-score": 0.8126152900184465,
+        "support": 32125.0
+      },
+      "ovulation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1621.0
+      },
+      "luteal": {
+        "precision": 0.6903353057199211,
+        "recall": 0.0912884715701617,
+        "f1-score": 0.1612531674729325,
+        "support": 11502.0
+      },
+      "accuracy": 0.6904340497260851,
+      "macro avg": {
+        "precision": 0.3451931561933621,
+        "recall": 0.26965480271744313,
+        "f1-score": 0.24346711437284474,
+        "support": 47460.0
+      },
+      "weighted avg": {
+        "precision": 0.6346509810574189,
+        "recall": 0.6904340497260851,
+        "f1-score": 0.5891276890879954,
+        "support": 47460.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        2212,
+        0,
+        0
+      ],
+      [
+        0,
+        31718,
+        0,
+        407
+      ],
+      [
+        0,
+        1557,
+        0,
+        64
+      ],
+      [
+        0,
+        10452,
+        0,
+        1050
+      ]
+    ]
+  },
+  "experiment_config": {
+    "experiment_name": "seq21_tanh_glorot_sgd_bs32_dropout02",
+    "seq_length": 21,
+    "lstm_units": 64,
+    "dense_units": 32,
+    "dropout": 0.2,
+    "dropout_rate": 0.2,
+    "dense_activation": "tanh",
+    "kernel_initializer": "glorot_uniform",
+    "recurrent_initializer": "orthogonal",
+    "optimizer_name": "SGD",
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "epochs": 30,
+    "loss_weights": {
+      "phase_output": 1.0,
+      "regression_output": 0.1
+    }
+  },
+  "baseline_config": {
+    "experiment_name": "seq21_tanh_glorot_sgd_bs32_dropout02",
+    "seq_length": 21,
+    "lstm_units": 64,
+    "dense_units": 32,
+    "dropout": 0.2,
+    "dropout_rate": 0.2,
+    "dense_activation": "tanh",
+    "kernel_initializer": "glorot_uniform",
+    "recurrent_initializer": "orthogonal",
+    "optimizer_name": "SGD",
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "epochs": 30,
+    "loss_weights": {
+      "phase_output": 1.0,
+      "regression_output": 0.1
+    }
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "validation": {
+    "classification_accuracy": 0.7632603616855586,
+    "macro_f1": 0.5607747001696365,
+    "weighted_f1": 0.7472332989792997,
+    "regression_mae_days": 5.451229572296143,
+    "regression_rmse_days": 6.630195164174209,
+    "classification_report": {
+      "menstruation": {
+        "precision": 0.8065887353878852,
+        "recall": 0.7050627032048304,
+        "f1-score": 0.7524163568773234,
+        "support": 2153.0
+      },
+      "follicular": {
+        "precision": 0.8121231558691469,
+        "recall": 0.8522769344687153,
+        "f1-score": 0.8317156886896258,
+        "support": 29711.0
+      },
+      "ovulation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1902.0
+      },
+      "luteal": {
+        "precision": 0.6413489290596992,
+        "recall": 0.6775798427218745,
+        "f1-score": 0.6589667551115966,
+        "support": 12462.0
+      },
+      "accuracy": 0.7632603616855586,
+      "macro avg": {
+        "precision": 0.5650152050791828,
+        "recall": 0.5587298700988551,
+        "f1-score": 0.5607747001696365,
+        "support": 46228.0
+      },
+      "weighted avg": {
+        "precision": 0.7324147050545191,
+        "recall": 0.7632603616855586,
+        "f1-score": 0.7472332989792997,
+        "support": 46228.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        1518,
+        635,
+        0,
+        0
+      ],
+      [
+        364,
+        25322,
+        0,
+        4025
+      ],
+      [
+        0,
+        1205,
+        0,
+        697
+      ],
+      [
+        0,
+        4018,
+        0,
+        8444
+      ]
+    ]
+  },
+  "test": {
+    "classification_accuracy": 0.7485035289913339,
+    "macro_f1": 0.5509726419135019,
+    "weighted_f1": 0.7337536356072122,
+    "regression_mae_days": 5.64046573638916,
+    "regression_rmse_days": 6.842838592458644,
+    "classification_report": {
+      "menstruation": {
+        "precision": 0.8202866593164277,
+        "recall": 0.6705723298783236,
+        "f1-score": 0.7379122241507563,
+        "support": 2219.0
+      },
+      "follicular": {
+        "precision": 0.8053524670996701,
+        "recall": 0.8308075492878693,
+        "f1-score": 0.8178819954069034,
+        "support": 28506.0
+      },
+      "ovulation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1858.0
+      },
+      "luteal": {
+        "precision": 0.6155265294074238,
+        "recall": 0.6843055213717286,
+        "f1-score": 0.6480963480963481,
+        "support": 12189.0
+      },
+      "accuracy": 0.7485035289913339,
+      "macro avg": {
+        "precision": 0.5602914139558804,
+        "recall": 0.5464213501344803,
+        "f1-score": 0.5509726419135019,
+        "support": 44772.0
+      },
+      "weighted avg": {
+        "precision": 0.7209918339835933,
+        "recall": 0.7485035289913339,
+        "f1-score": 0.7337536356072122,
+        "support": 44772.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        1488,
+        731,
+        0,
+        0
+      ],
+      [
+        326,
+        23683,
+        0,
+        4497
+      ],
+      [
+        0,
+        1145,
+        0,
+        713
+      ],
+      [
+        0,
+        3848,
+        0,
+        8341
+      ]
+    ]
+  },
+  "experiment_config": {
+    "experiment_name": "seq14_tanh_glorot_adam_bs32_dropout02",
+    "seq_length": 14,
+    "lstm_units": 64,
+    "dense_units": 32,
+    "dropout": 0.2,
+    "dropout_rate": 0.2,
+    "dense_activation": "tanh",
+    "kernel_initializer": "glorot_uniform",
+    "recurrent_initializer": "orthogonal",
+    "optimizer_name": "Adam",
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "epochs": 30,
+    "loss_weights": {
+      "phase_output": 1.0,
+      "regression_output": 0.1
+    }
+  },
+  "baseline_config": {
+    "experiment_name": "seq14_tanh_glorot_adam_bs32_dropout02",
+    "seq_length": 14,
+    "lstm_units": 64,
+    "dense_units": 32,
+    "dropout": 0.2,
+    "dropout_rate": 0.2,
+    "dense_activation": "tanh",
+    "kernel_initializer": "glorot_uniform",
+    "recurrent_initializer": "orthogonal",
+    "optimizer_name": "Adam",
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "epochs": 30,
+    "loss_weights": {
+      "phase_output": 1.0,
+      "regression_output": 0.1
+    }
+  }
+}

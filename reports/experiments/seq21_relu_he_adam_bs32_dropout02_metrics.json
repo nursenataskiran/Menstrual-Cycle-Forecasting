@@ -1,0 +1,184 @@
+{
+  "validation": {
+    "classification_accuracy": 0.7804198930959494,
+    "macro_f1": 0.46842621846599247,
+    "weighted_f1": 0.753139808084758,
+    "regression_mae_days": 5.119781017303467,
+    "regression_rmse_days": 6.298166147385155,
+    "classification_report": {
+      "menstruation": {
+        "precision": 0.8161434977578476,
+        "recall": 0.25359962842545286,
+        "f1-score": 0.38695960311835575,
+        "support": 2153.0
+      },
+      "follicular": {
+        "precision": 0.7971003375268487,
+        "recall": 0.9290674455339314,
+        "f1-score": 0.8580393883926728,
+        "support": 33553.0
+      },
+      "ovulation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1673.0
+      },
+      "luteal": {
+        "precision": 0.7086781243369403,
+        "recall": 0.5649526387009473,
+        "f1-score": 0.6287058823529412,
+        "support": 11824.0
+      },
+      "accuracy": 0.7804198930959494,
+      "macro avg": {
+        "precision": 0.5804804899054091,
+        "recall": 0.43690492816508286,
+        "f1-score": 0.46842621846599247,
+        "support": 49203.0
+      },
+      "weighted avg": {
+        "precision": 0.7495818287070094,
+        "recall": 0.7804198930959494,
+        "f1-score": 0.753139808084758,
+        "support": 49203.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        546,
+        1607,
+        0,
+        0
+      ],
+      [
+        123,
+        31173,
+        0,
+        2257
+      ],
+      [
+        0,
+        1184,
+        0,
+        489
+      ],
+      [
+        0,
+        5144,
+        0,
+        6680
+      ]
+    ]
+  },
+  "test": {
+    "classification_accuracy": 0.7763590391908975,
+    "macro_f1": 0.4609386630257821,
+    "weighted_f1": 0.7495338483059677,
+    "regression_mae_days": 5.242132663726807,
+    "regression_rmse_days": 6.4813101637870245,
+    "classification_report": {
+      "menstruation": {
+        "precision": 0.8700361010830325,
+        "recall": 0.2179023508137432,
+        "f1-score": 0.3485177151120752,
+        "support": 2212.0
+      },
+      "follicular": {
+        "precision": 0.7979858140668147,
+        "recall": 0.9175408560311284,
+        "f1-score": 0.8535974400185338,
+        "support": 32125.0
+      },
+      "ovulation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1621.0
+      },
+      "luteal": {
+        "precision": 0.6910112359550562,
+        "recall": 0.5988523735002608,
+        "f1-score": 0.6416394969725198,
+        "support": 11502.0
+      },
+      "accuracy": 0.7763590391908975,
+      "macro avg": {
+        "precision": 0.5897582877762259,
+        "recall": 0.4335738950862831,
+        "f1-score": 0.4609386630257821,
+        "support": 47460.0
+      },
+      "weighted avg": {
+        "precision": 0.7481631978181025,
+        "recall": 0.7763590391908975,
+        "f1-score": 0.7495338483059677,
+        "support": 47460.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        482,
+        1730,
+        0,
+        0
+      ],
+      [
+        72,
+        29476,
+        0,
+        2577
+      ],
+      [
+        0,
+        1118,
+        0,
+        503
+      ],
+      [
+        0,
+        4614,
+        0,
+        6888
+      ]
+    ]
+  },
+  "experiment_config": {
+    "experiment_name": "seq21_relu_he_adam_bs32_dropout02",
+    "seq_length": 21,
+    "lstm_units": 64,
+    "dense_units": 32,
+    "dropout": 0.2,
+    "dropout_rate": 0.2,
+    "dense_activation": "relu",
+    "kernel_initializer": "he_normal",
+    "recurrent_initializer": "orthogonal",
+    "optimizer_name": "Adam",
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "epochs": 30,
+    "loss_weights": {
+      "phase_output": 1.0,
+      "regression_output": 0.1
+    }
+  },
+  "baseline_config": {
+    "experiment_name": "seq21_relu_he_adam_bs32_dropout02",
+    "seq_length": 21,
+    "lstm_units": 64,
+    "dense_units": 32,
+    "dropout": 0.2,
+    "dropout_rate": 0.2,
+    "dense_activation": "relu",
+    "kernel_initializer": "he_normal",
+    "recurrent_initializer": "orthogonal",
+    "optimizer_name": "Adam",
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "epochs": 30,
+    "loss_weights": {
+      "phase_output": 1.0,
+      "regression_output": 0.1
+    }
+  }
+}
